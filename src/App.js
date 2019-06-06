@@ -16,7 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          ~~Noodle.AI~~
+          ~~Jason@Noodle.AI~~
         </a>
       </header>
     </div>
