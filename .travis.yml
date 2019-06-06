@@ -6,5 +6,14 @@ before_install:
   - docker build  -t jason/docker-react -f Dockerfile.dev .
 
 script:
-  # hang without -- --coverage, waiting for more input after test
   - docker run jason/docker-react npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'us-west-1'
+  app: 'docker'
+  env: 'Docker-env'
+  bucket_name: 'elasticbeanstalk-us-west-1-625008224387'
+  bucket_path: 'docker'
+  on:
+    branch: master
