@@ -7,5 +7,4 @@ before_install:
 
 script:
   # hang without -- --coverage, waiting for more input after test
-  - docker run -it jason/docker-react npm run test -- --coverage
-  
+  - docker run jason/docker-react npm run test -- --coverage
