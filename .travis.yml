@@ -1,0 +1,11 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build  -t jason/docker-react -f Dockerfile.dev .
+
+script:
+  # hang without -- --coverage, waiting for more input after test
+  - docker run -it jason/docker-react npm run test -- --coverage
+  
